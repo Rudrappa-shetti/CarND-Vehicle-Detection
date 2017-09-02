@@ -36,8 +36,7 @@ You're reading it!
 ####1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
 Firstly, i loaded all the images and then differntiated saying `Car` and `No-Car` images. 
-
-![alt text][image1]
+This image is present in output_images folder.(For some reason it is not opening in github so mentioning the folder name)
 
 The code for extracting HOG features from an image is defined by the method Hog_features_extract and is contained in the cell titled "Convert Image to Histogram of Oriented Gradients (HOG)."
 The figure below shows the HOG image.
