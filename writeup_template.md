@@ -13,6 +13,15 @@ The goals / steps of this project are the following:
 * Implement a sliding-window technique and use your trained classifier to search for vehicles in images.
 * Run your pipeline on a video stream (start with the test_video.mp4 and later implement on full project_video.mp4) and create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles.
 * Estimate a bounding box for vehicles detected.
+
+[//]: # (Image References)
+[image1]: ./output_images/classify_car_No_car.png
+[image2]: ./output_images/HOG.png
+[image3]: ./output_images/Sliding_Windows.png
+[image4]: ./output_images/Heatmap.png
+[image5]: ./output_images/Label_map.png
+[image6]: ./output_images/Sliding_Window.png
+[video1]: ./project_output_video.mp4
  
 
 ---
@@ -28,13 +37,13 @@ You're reading it!
 
 Firstly, i loaded all the images and then differntiated saying `Car` and `No-Car` images. 
 
-![alt text][./output_images/classify_car_No_car.png]
+![alt text][image1]
 
 The code for extracting HOG features from an image is defined by the method Hog_features_extract and is contained in the cell titled "Convert Image to Histogram of Oriented Gradients (HOG)."
 The figure below shows the HOG image.
 
 
-![alt text]./output_images/HOG.png
+![alt text][image2]
 
 ####2. Explain how you settled on your final choice of HOG parameters.
 
@@ -52,9 +61,9 @@ I trained a linear SVM with the default classifier parameters and using HOG feat
 
 I decided to search random window positions at random scales all over the image and came up with this.
 
-![alt text][./output_images/Sliding_Windows.png]
-![alt text][./output_images/Heatmap.png]
-![alt text][./output_images/Label_map.png]
+![alt text][image3]
+![alt text][image4]
+![alt text][image5]
 
 
 ####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
@@ -63,13 +72,13 @@ I began by optimizing the SVM classifier. The original classifier used HOG featu
 Using all three YUV channels increased the accuracy to 98.40%, but also tripled the execution time.
 However, changing the pixels_per_cell parameter from 8 to 16 produced a roughly ten-fold increase in execution speed with minimal cost to accuracy.
 
-![alt text][./output_images/Sliding_Window.png]
+![alt text][image6]
 ---
 
 ### Video Implementation
 
 ####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-[link to my video result](./project_output_video.mp4)
+[link to my video result][video1]
 
 
 ####2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
