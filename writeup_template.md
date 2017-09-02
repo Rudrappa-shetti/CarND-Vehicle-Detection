@@ -34,7 +34,7 @@ The code for extracting HOG features from an image is defined by the method Hog_
 The figure below shows the HOG image.
 
 
-![alt text][./output_images/HOG.png]
+![alt text]./output_images/HOG.png
 
 ####2. Explain how you settled on your final choice of HOG parameters.
 
